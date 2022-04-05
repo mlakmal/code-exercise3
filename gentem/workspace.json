@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "code-exercise": "apps/code-exercise",
+    "utility-http": "libs/utility/http",
+    "utility-shared": "libs/utility/shared",
+    "ux": "libs/ux"
+  }
+}

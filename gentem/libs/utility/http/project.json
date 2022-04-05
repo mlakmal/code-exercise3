@@ -1,0 +1,23 @@
+{
+  "root": "libs/utility/http",
+  "sourceRoot": "libs/utility/http/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/utility/http/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/utility/http"],
+      "options": {
+        "jestConfig": "libs/utility/http/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "root": "apps/code-exercise",
+  "sourceRoot": "apps/code-exercise/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/code-exercise",
+        "index": "apps/code-exercise/src/index.html",
+        "baseHref": "/",
+        "main": "apps/code-exercise/src/main.tsx",
+        "polyfills": "apps/code-exercise/src/polyfills.ts",
+        "tsConfig": "apps/code-exercise/tsconfig.app.json",
+        "assets": [
+          "apps/code-exercise/src/favicon.ico",
+          "apps/code-exercise/src/assets"
+        ],
+        "styles": ["apps/code-exercise/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/code-exercise/src/environments/environment.ts",
+              "with": "apps/code-exercise/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "code-exercise:build:development",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "code-exercise:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/code-exercise/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/code-exercise"],
+      "options": {
+        "jestConfig": "apps/code-exercise/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
