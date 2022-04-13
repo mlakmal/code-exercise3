@@ -44,6 +44,7 @@
       "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "code-exercise:build:development",
+        "proxyConfig": "apps/code-exercise/proxy.conf.js",
         "hmr": true
       },
       "configurations": {

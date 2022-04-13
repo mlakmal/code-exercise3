@@ -14,7 +14,7 @@ export interface ITrackResponse{
 export class SongsApi {
   public static getPopTracks() {
     return HttpClient.request<ITrackResponse>({
-      url: 'https://itunes.apple.com/search?limit=500&term=pop',
+      url: '/proxy/itunes/search?limit=500&term=pop',
       method: 'GET',
     });
   }
