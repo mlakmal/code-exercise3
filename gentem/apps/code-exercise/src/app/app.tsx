@@ -30,9 +30,6 @@ import LooksOneIcon from '@mui/icons-material/LooksOne';
 import LooksTwoIcon from '@mui/icons-material/LooksTwo';
 import LooksThreeIcon from '@mui/icons-material/Looks3';
 import LooksFourIcon from '@mui/icons-material/Looks4';
-import { Exercise2 } from './routes/Exercise2';
-import { Exercise3 } from './routes/Exercise3';
-import { Exercise4 } from './routes/Exercise4';
 
 let navigate: NavigateFunction;
 
@@ -201,9 +198,6 @@ export function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/exercise1" />} />
           <Route path="/exercise1" element={<Exercise1 />} />
-          <Route path="/exercise2" element={<Exercise2 />} />
-          <Route path="/exercise3" element={<Exercise3 />} />
-          <Route path="/exercise4" element={<Exercise4 />} />
         </Routes>
       </Main>
     </BrowserRouter>
